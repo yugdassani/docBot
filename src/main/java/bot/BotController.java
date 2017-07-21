@@ -17,6 +17,6 @@ public class BotController {
         System.out.println(obj);
 
 
-        return new WebhookResponse("https://www.google.com"+"\n"+"https://facebook.com", "https://www.google.com");
+        return new WebhookResponse(obj, "https://www.google.com");
     }
 }
