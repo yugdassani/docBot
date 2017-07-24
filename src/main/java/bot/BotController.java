@@ -21,7 +21,7 @@ public class BotController {
         String indate = obj.substring(obj.indexOf("inDate"),obj.indexOf("inDate")+20);
         SimpleDateFormat f = new SimpleDateFormat("yyyy-MM-dd");
         Date date = new Date();
-        String d = "2017-07-24";
+        String d = "2017-07-23";
         Date date1 = new Date();
         try {
             date = f.parse(indate);
@@ -33,6 +33,6 @@ public class BotController {
         if (date.after(date1))
             return new WebhookResponse(date1.toString(), "https://www.google.com");
         else
-           return new WebhookResponse("yello","hey");
+           return new WebhookResponse(obj,"hey");
     }
 }
