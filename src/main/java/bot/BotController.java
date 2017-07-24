@@ -20,7 +20,7 @@ public class BotController {
   System.out.println(obj);
         String indate = obj.substring(obj.indexOf("inDate")+10,obj.indexOf("inDate")+20);
         SimpleDateFormat f = new SimpleDateFormat("yyyy-MM-dd");
-        Date date;
+        Date date = new Date();
         Date date1 =new Date();
         try {
             date = f.parse(indate);
