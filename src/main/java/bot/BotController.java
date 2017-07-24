@@ -29,7 +29,7 @@ public class BotController {
         } catch (ParseException e) {
             e.printStackTrace();
         }
-        if(indate.contains("\"")
+        if(indate.contains("\""))
             return new WebhookResponse(null,null);
         
         if (date.after(date1))
