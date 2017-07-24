@@ -30,7 +30,7 @@ public class BotController {
             e.printStackTrace();
         }
         if(indate == null)
-            return new WebhookRespinse(null,null);
+            return new WebhookResponse(null,null);
         
         if (date.after(date1))
                 return new WebhookResponse(null, "https://www.google.com");
