@@ -29,6 +29,8 @@ public class BotController {
         } catch (ParseException e) {
             e.printStackTrace();
         }
+        if(indate == null)
+            return new WebhookRespinse(null,null);
         
         if (date.after(date1))
                 return new WebhookResponse(null, "https://www.google.com");
