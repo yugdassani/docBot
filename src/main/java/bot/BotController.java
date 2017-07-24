@@ -25,14 +25,13 @@ public class BotController {
         try {
             date = f.parse(indate);
             
-            if (date.after(date1))
-                return new WebhookResponse(date1.toString(), "https://www.google.com");
-            
         } catch (ParseException e) {
             e.printStackTrace();
         }
         
-        
-           return new WebhookResponse(obj,"hey");
+        if (date.after(date1))
+                return new WebhookResponse(date1.toString(), "https://www.google.com");
+        else
+                return new WebhookResponse(indate,"hey");
     }
 }
