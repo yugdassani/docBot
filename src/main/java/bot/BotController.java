@@ -21,10 +21,9 @@ public class BotController {
         String indate = obj.substring(obj.indexOf("inDate")+10,obj.indexOf("inDate")+20);
         SimpleDateFormat f = new SimpleDateFormat("yyyy-MM-dd");
         Date date;
-        Date date1;
+        Date date1 =new Date();
         try {
             date = f.parse(indate);
-           date1 = f.parse(d);
             
             if (date.after(date1))
                 return new WebhookResponse(date1.toString(), "https://www.google.com");
