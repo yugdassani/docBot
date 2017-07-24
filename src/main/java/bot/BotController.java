@@ -31,7 +31,7 @@ public class BotController {
         }
         
         if (date.after(date1))
-                return new WebhookResponse(abc, "https://www.google.com");
+                return new WebhookResponse(null, "https://www.google.com");
         else
                 return new WebhookResponse(indate,"hey");
     }
