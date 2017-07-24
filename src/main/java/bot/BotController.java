@@ -18,7 +18,7 @@ public class BotController {
     @RequestMapping(method = RequestMethod.POST)
     public @ResponseBody WebhookResponse webhook(@RequestBody String obj){
   System.out.println(obj);
-        String abc
+        String abc;
         String indate = obj.substring(obj.indexOf("inDate")+9,obj.indexOf("inDate")+19);
         SimpleDateFormat f = new SimpleDateFormat("yyyy-MM-dd");
         Date date = new Date();
