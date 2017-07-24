@@ -20,19 +20,21 @@ public class BotController {
   System.out.println(obj);
         String indate = obj.substring(obj.indexOf("inDate"),obj.indexOf("inDate")+20);
         SimpleDateFormat f = new SimpleDateFormat("yyyy-MM-dd");
-        Date date = new Date();
+        Date date;
         String d = "2017-07-23";
-        Date date1 = new Date();
+        Date date1;
         try {
             date = f.parse(indate);
            date1 = f.parse(d);
+            
+            if (date.after(date1))
+                return new WebhookResponse(date1.toString(), "https://www.google.com");
+            
         } catch (ParseException e) {
             e.printStackTrace();
         }
         
-        if (date.after(date1))
-            return new WebhookResponse(date1.toString(), "https://www.google.com");
-        else
-           return new WebhookResponse(date1.toString() + date.toString(),"hey");
+        
+           return new WebhookResponse(obj,"hey");
     }
 }
