@@ -15,11 +15,7 @@ import java.util.Date;
 @RequestMapping("/webhook")
 public class BotController {
 
-    
-   public WebhookResponse abc() {
-        return new WebhookResponse("hi","hi");
-    }
-    
+  
     @RequestMapping(method = RequestMethod.POST)
     public @ResponseBody WebhookResponse webhook(@RequestBody String obj){
   System.out.println(obj);
