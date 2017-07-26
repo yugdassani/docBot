@@ -15,6 +15,11 @@ import java.util.Date;
 @RequestMapping("/webhook")
 public class BotController {
 
+    
+   public WebhookResponse abc() {
+        return new WebhookResponse("hi","hi");
+    }
+    abc();
     @RequestMapping(method = RequestMethod.POST)
     public @ResponseBody WebhookResponse webhook(@RequestBody String obj){
   System.out.println(obj);
@@ -37,4 +42,6 @@ public class BotController {
         else
                 return new WebhookResponse("Date invalid. Please try again..","hey");
     }
+    
+    
 }
