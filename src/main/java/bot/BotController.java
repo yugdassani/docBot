@@ -87,8 +87,7 @@ public class BotController {
 						}*/
 						
 						String file_link = "<a href='" + file_url + "' target='_blank' download>" 
-										 + documentName + 
-										 + "</a>";
+										 + documentName +"</a>";
 						doc_urls.add(file_link);
 					}
 				}
