@@ -91,7 +91,7 @@ public class BotController {
 						
 						String file_link = "<a href=\"" + file_url + "\">" 
 										 + documentName +"</a>";
-						doc_urls = doc_urls + file_url + "\n";
+						doc_urls = doc_urls + file_link + "\n";
 							
 					}
 				}
