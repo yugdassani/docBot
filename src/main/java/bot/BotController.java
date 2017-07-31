@@ -48,7 +48,7 @@ public class BotController {
         else if(eFile.length()>0)
           files = getDocumentURL("docs",eFile);
           
-	    if(files != NULL)
+	    if(files != null)
         	return new WebhookResponse(files,"text");
 	    else
 		    return new WebhookResponse(null,null);
