@@ -45,14 +45,15 @@ public class BotController {
         else if(pmFile.length()>0)
           files = getDocumentURL("docs",pmFile);
         
-        else if(efile.length()>0)
-          files = getDocumetnURL("docs",eFile);
+        else if(eFile.length()>0)
+          files = getDocumentURL("docs",eFile);
           
         return new WebhookResponse(files.toString(),"text");
     }
     
   public static List<String> getDocumentURL(String category, String documentName) {
 		List<String> doc_urls = new ArrayList<String>();
+	  	String DOCUMENT_LIST_EXCEL_FILE = "document_list.xlsx"
 		
 		try {
 			FileInputStream fs = new FileInputStream(ResourceUtils.getFile("classpath:"+DOCUMENT_LIST_EXCEL_FILE));
