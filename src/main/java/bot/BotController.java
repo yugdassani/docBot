@@ -86,7 +86,7 @@ public class BotController {
 							break;
 						}
 						
-						String file_link = "<a href='" + file_url + "' target='_blank'>" 
+						String file_link = "<a href='" + file_url + "' target='_blank' download>" 
 										 + "<i class='" + file_class + "' aria-hidden='true'></i>"
 										 + "<span style='display: block;'>" + documentName + "</span>" 
 										 + "</a>";
