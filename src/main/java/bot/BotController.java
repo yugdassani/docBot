@@ -21,7 +21,9 @@ public class BotController {
       
         System.out.println(obj);
         
-        return new WebhookResponse(obj,"text");
+        String finFile = obj.substring(obj.indexOf("finFile")+10,obj.indexOf("\"",obj.indexof("finFile")+10));
+        
+        return new WebhookResponse(finFile,"text");
     }
     
     
