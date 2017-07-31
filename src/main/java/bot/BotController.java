@@ -53,7 +53,7 @@ public class BotController {
     
   public static List<String> getDocumentURL(String category, String documentName) {
 		List<String> doc_urls = new ArrayList<String>();
-	  	String DOCUMENT_LIST_EXCEL_FILE = "document_list.xlsx"
+	  	String DOCUMENT_LIST_EXCEL_FILE = "document_list.xlsx";
 		
 		try {
 			FileInputStream fs = new FileInputStream(ResourceUtils.getFile("classpath:"+DOCUMENT_LIST_EXCEL_FILE));
