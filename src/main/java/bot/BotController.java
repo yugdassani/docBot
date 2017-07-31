@@ -99,7 +99,7 @@ public class BotController {
 			fs.close();
 
 		} catch (IOException e) {
-			logger.log(Level.ERROR, e.getMessage());
+			e.printStackTrace();
 		}
 		
 		return doc_urls;
