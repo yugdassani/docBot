@@ -68,7 +68,7 @@ public class BotController {
 						String file_url = currentRow.getCell(1).getStringCellValue();
 						String file_type = currentRow.getCell(2).getStringCellValue();
 						
-						String file_class = "fa fa-file-text-o fa-3x";
+						/**String file_class = "fa fa-file-text-o fa-3x";
 						switch (file_type) {
 						case "pdf":
 							file_class = "fa fa-file-pdf-o fa-3x";
@@ -84,11 +84,10 @@ public class BotController {
 							break;
 						default:
 							break;
-						}
+						}*/
 						
 						String file_link = "<a href='" + file_url + "' target='_blank' download>" 
-										 + "<i class='" + file_class + "' aria-hidden='true'></i>"
-										 + "<span style='display: block;'>" + documentName + "</span>" 
+										 + documentName + 
 										 + "</a>";
 						doc_urls.add(file_link);
 					}
