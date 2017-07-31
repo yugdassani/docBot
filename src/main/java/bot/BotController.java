@@ -33,7 +33,7 @@ public class BotController {
       
         System.out.println(obj);
       
-      List<String> files = new ArrayList<String>();
+      String files;
         
         String finFile = obj.substring(obj.indexOf("finFile")+10,obj.indexOf("\"",obj.indexOf("finFile")+10));
         String pmFile = obj.substring(obj.indexOf("pmFile")+9,obj.indexOf("\"",obj.indexOf("pmFile")+9));
@@ -48,11 +48,14 @@ public class BotController {
         else if(eFile.length()>0)
           files = getDocumentURL("docs",eFile);
           
-        return new WebhookResponse(files.toString(),"text");
+	    if(files != NULL)
+        	return new WebhookResponse(files,"text");
+	    else
+		    return new WebhookResponse(null,null);
     }
     
-  public static List<String> getDocumentURL(String category, String documentName) {
-		List<String> doc_urls = new ArrayList<String>();
+  public static String getDocumentURL(String category, String documentName) {
+		String doc_urls = "";
 	  	String DOCUMENT_LIST_EXCEL_FILE = "document_list.xlsx";
 		
 		try {
@@ -88,7 +91,8 @@ public class BotController {
 						
 						String file_link = "<a href=\"" + file_url + "\">" 
 										 + documentName +"</a>";
-						doc_urls.add(file_link);
+						doc_urls = doc_urls + file_link + "\n";
+							
 					}
 				}
 			}
