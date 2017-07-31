@@ -18,25 +18,10 @@ public class BotController {
   
     @RequestMapping(method = RequestMethod.POST)
     public @ResponseBody WebhookResponse webhook(@RequestBody String obj){
-  System.out.println(obj);
-        String abc;
-        String indate = obj.substring(obj.indexOf("inDate")+9,obj.indexOf("inDate")+19);
-        SimpleDateFormat f = new SimpleDateFormat("yyyy-MM-dd");
-        Date date = new Date();
-        Date date1 =new Date();
-        try {
-            date = f.parse(indate);
-            
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
-        if(indate.contains("\""))
-            return new WebhookResponse(null,null);
+      
+        System.out.println(obj);
         
-        if (date.after(date1))
-                return new WebhookResponse(null, "https://www.google.com");
-        else
-                return new WebhookResponse("Date invalid. Please try again..","hey");
+        return new WebhookResponse(obj,"text");
     }
     
     
