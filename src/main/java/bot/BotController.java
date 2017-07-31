@@ -33,7 +33,7 @@ public class BotController {
       
         System.out.println(obj);
       
-      String files;
+      String files = null;
         
         String finFile = obj.substring(obj.indexOf("finFile")+10,obj.indexOf("\"",obj.indexOf("finFile")+10));
         String pmFile = obj.substring(obj.indexOf("pmFile")+9,obj.indexOf("\"",obj.indexOf("pmFile")+9));
