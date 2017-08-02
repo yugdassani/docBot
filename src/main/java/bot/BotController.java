@@ -35,14 +35,16 @@ public class BotController {
       
       	String files = null;
         
-        /*String docInfo = obj.substring(obj.indexOf("all_docs")+11,obj.indexOf("\"",obj.indexOf("all_docs")+11));
+        String[] docInfo = obj.substring(obj.indexOf("all_docs")+12,obj.indexOf("}",obj.indexOf("all_docs")+12)).split(":");
+	    
+	
        
         files = getDocumentURL("docs",docInfo);
           
 	if(files != null)
        	    return new WebhookResponse(files,"text");
-	else*/
-	    return new WebhookResponse(obj,null);
+	else
+	    return new WebhookResponse(docInfo[1],null);
     }
     
   public static String getDocumentURL(String category, String documentName) {
