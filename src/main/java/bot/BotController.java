@@ -39,11 +39,11 @@ public class BotController {
 	    
 	
        
-        files = getDocumentURL("docs",docInfo);
+        /*files = getDocumentURL("docs",docInfo);
           
 	if(files != null)
        	    return new WebhookResponse(files,"text");
-	else
+	else*/
 	    return new WebhookResponse(docInfo[1],null);
     }
     
