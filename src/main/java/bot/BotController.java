@@ -33,25 +33,16 @@ public class BotController {
       
         System.out.println(obj);
       
-      String files = null;
+      	String files = null;
         
-        String finFile = obj.substring(obj.indexOf("finFile")+10,obj.indexOf("\"",obj.indexOf("finFile")+10));
-        String pmFile = obj.substring(obj.indexOf("pmFile")+9,obj.indexOf("\"",obj.indexOf("pmFile")+9));
-        String eFile = obj.substring(obj.indexOf("file")+7,obj.indexOf("\"",obj.indexOf("file")+7));
-        
-        if(finFile.length()>0)
-          files = getDocumentURL("docs",finFile);
-      
-        else if(pmFile.length()>0)
-          files = getDocumentURL("docs",pmFile);
-        
-        else if(eFile.length()>0)
-          files = getDocumentURL("docs",eFile);
+        String fileName = obj.substring(obj.indexOf("all_docs")+11,obj.indexOf("\"",obj.indexOf("all_docs")+11));
+       
+        files = getDocumentURL("docs",fileName);
           
-	    if(files != null)
-        	return new WebhookResponse(files,"text");
-	    else
-		    return new WebhookResponse(null,null);
+	if(files != null)
+       	    return new WebhookResponse(files,"text");
+	else
+	    return new WebhookResponse(null,null);
     }
     
   public static String getDocumentURL(String category, String documentName) {
